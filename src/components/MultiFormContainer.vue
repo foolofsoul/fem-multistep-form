@@ -1,16 +1,8 @@
 <script setup lang="ts">
-import {
-  type Component,
-  defineAsyncComponent,
-  onMounted,
-  ref,
-  computed,
-} from 'vue';
-import SidebarSteps from '@/components/SidebarSteps.vue';
+import { type Component, defineAsyncComponent, ref, computed } from 'vue';
+import type { IStepComponent } from '@/types';
 
-interface IStepComponent {
-  [key: string]: Component;
-}
+import SidebarSteps from '@/components/SidebarSteps.vue';
 
 // Load step components from views dir
 const stepComponents = Object.entries(
@@ -41,8 +33,6 @@ function handleGoBack() {
 const currentComponent = computed(
   () => stepComponents[`Step${currentStep.value}`]
 );
-
-onMounted(() => {});
 </script>
 
 <template>
@@ -62,5 +52,3 @@ onMounted(() => {});
     </button>
   </footer>
 </template>
-
-<style lang="less" scoped></style>

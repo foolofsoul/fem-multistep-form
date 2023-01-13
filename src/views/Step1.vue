@@ -1,12 +1,13 @@
 <script setup lang="ts">
+import StepHeader from '@/components/StepHeader.vue';
 import FormInput from '@/components/FormInput.vue';
 </script>
 
 <template>
-  <div class="mb-2 text-xl text-marine-blue">Personal Info</div>
-  <p class="mb-4 text-cool-gray">
-    Please provide your name, email address, and phone number.
-  </p>
+  <StepHeader
+    title="Personal info"
+    description="Please provide your name, email address, and phone number."
+  />
 
   <form class="flex flex-col gap-y-4">
     <FormInput
