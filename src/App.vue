@@ -3,7 +3,9 @@ import MultiFormContainer from './components/MultiFormContainer.vue';
 </script>
 
 <template>
-  <MultiFormContainer />
+  <div class="flex w-full items-center justify-center">
+    <MultiFormContainer />
+  </div>
 </template>
 
 <style scoped></style>

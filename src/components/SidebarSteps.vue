@@ -8,6 +8,7 @@ interface ISteps {
 
 const props = defineProps<{
   currentStep: number;
+  labels: Record<string, string>;
 }>();
 
 const steps = computed(() => {
@@ -26,19 +27,30 @@ const steps = computed(() => {
 
 <template>
   <section
-    class="flex justify-center gap-4 pt-8 pb-28 bg-purplish-blue bg-[url('/src/assets/images/bg-sidebar-mobile.svg')] bg-no-repeat bg-cover"
+    class="flex justify-center gap-4 bg-purplish-blue bg-[url('/src/assets/images/bg-sidebar-mobile.svg')] bg-cover bg-no-repeat pt-8 pb-28 desktop:min-w-[275px] desktop:flex-col desktop:justify-start desktop:gap-6 desktop:rounded-lg desktop:bg-[url('/src/assets/images/bg-sidebar-desktop.svg')] desktop:p-10"
   >
     <div
       v-for="{ step, isActive } in steps"
       :key="step"
-      class="flex flex-wrap justify-center content-center aspect-square w-8 border border-solid rounded-full text-sm"
-      :class="
-        isActive
-          ? 'border-light-blue text-marine-blue bg-light-blue'
-          : 'border-white text-alabaster'
-      "
+      class="flex items-center gap-4"
     >
-      {{ step }}
+      <span
+        class="flex aspect-square w-8 flex-wrap content-center justify-center rounded-full border border-solid text-sm"
+        :class="
+          isActive
+            ? 'border-light-blue bg-light-blue text-marine-blue'
+            : 'border-white text-alabaster'
+        "
+        >{{ step }}</span
+      >
+      <div class="hidden flex-col desktop:flex">
+        <span class="text-xs font-normal uppercase text-light-gray"
+          >Step {{ step }}</span
+        >
+        <span class="text-sm font-bold uppercase text-white">{{
+          labels[`step${step}`]
+        }}</span>
+      </div>
     </div>
   </section>
 </template>

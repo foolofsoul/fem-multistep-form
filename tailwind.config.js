@@ -3,7 +3,7 @@ module.exports = {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     extend: {},
-    screens: { desktop: '1440px' },
+    screens: { desktop: '972px' },
     colors: {
       'marine-blue': 'hsl(213, 96%, 18%)',
       'purplish-blue': 'hsl(243, 100%, 62%)',
@@ -22,6 +22,7 @@ module.exports = {
       md: ['15px', { fontWeight: 500 }],
       lg: ['16px', { fontWeight: 400 }],
       xl: ['24px', { fontWeight: 700 }],
+      '2xl': ['32px', { fontWeight: 700 }]
     },
   },
   plugins: [],

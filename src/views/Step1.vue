@@ -9,7 +9,7 @@ import FormInput from '@/components/FormInput.vue';
     description="Please provide your name, email address, and phone number."
   />
 
-  <form class="flex flex-col gap-y-4">
+  <form class="flex flex-col gap-y-4 desktop:gap-y-6">
     <FormInput
       id="name"
       type="text"
